@@ -1,6 +1,0 @@
-/tmp/ccejKJ1Z.o: En la función `main':
-mainSobrecarga.cpp:(.text+0x24): referencia a `Integer::Integer(int)' sin definir
-mainSobrecarga.cpp:(.text+0x35): referencia a `Integer::Integer(int)' sin definir
-/tmp/ccejKJ1Z.o: En la función `Integer::operator==(Integer&)':
-mainSobrecarga.cpp:(.text._ZN7IntegereqERS_[_ZN7IntegereqERS_]+0x1f): referencia a `Integer::getValue()' sin definir
-collect2: error: ld returned 1 exit status
