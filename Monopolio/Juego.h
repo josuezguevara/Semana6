@@ -14,6 +14,7 @@ class Juego{
     vector<Jugador*> jugadores;
     vector<int> posiciones;
     int turnoActual;
+    void leerJugadores();
 
   public:
     Juego();

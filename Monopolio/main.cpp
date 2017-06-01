@@ -1,6 +1,8 @@
 #include "Casillas.h"
 #include "Propiedad.h"
 #include "Jugador.h"
+#include "Juego.h"
+
 #include <iostream>
 #include <fstream>
 
@@ -37,6 +39,13 @@ int main() {
       cout<<uno->getNombre()<<endl<<uno->getColor()<<endl<<dos->getNombre()<<endl<<dos->getColor()<<endl;
       cout<<"Pieza: "<<player->getPieza()<<endl;
       cout<<"Dinero: "<<player->getDinero()<<endl;
+      delete uno;
+      delete dos;
+
       delete player;
+
+      Juego* juego=new Juego();
+
+      delete juego;
   return 0;
 }

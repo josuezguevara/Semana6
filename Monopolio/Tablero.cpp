@@ -1,4 +1,5 @@
 #include "Tablero.h"
+#include "Propiedad.h"
 #include <fstream>
 #include <iostream>
 using namespace std;
@@ -8,7 +9,7 @@ Tablero::Tablero(){
 
   if (fileCasillas.is_open()){
     for (int i = 0; i < 6; i++) {//leer las Casillas
-      Casillas* casilla =new Casillas();
+      Propiedad* casilla =new Propiedad();
       fileCasillas>>*casilla;
       casillas.push_back(casilla);
     }
@@ -30,5 +31,5 @@ Tablero::~Tablero(){
   for (int i = 0; i < casillas.size(); i++) {
       delete casillas[i];
   }
-  
+
 }
