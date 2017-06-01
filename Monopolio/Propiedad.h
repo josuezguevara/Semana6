@@ -1,5 +1,6 @@
 #include "Casillas.h"
 #include <string>
+#include <iostream>
 #ifndef PROPIEDAD_H
 #define PROPIEDAD_H
 
@@ -23,6 +24,28 @@ class Propiedad: public Casillas{
     string color;//color de la propiedad
 
   public:
+
+    //sobrecarga de operador >>
+    /* nombre, color, precio,rentaNormal,rentaUnaCasa,...,rentaCuatroCasas,rentaHotel, precioCasa */
+    friend istream& operator>>(istream& in,Propiedad& propiedad){
+      char buffer[256];
+      in.getline(buffer,256);
+      propiedad.nombre=buffer;
+      in>>propiedad.color;
+      in>>propiedad.precio;
+      in>>propiedad.rentaNormal;
+      in>>propiedad.rentaTodas;
+      in>>propiedad.rentaUnaCasa;
+      in>>propiedad.rentaDosCasas;
+      in>>propiedad.rentaTresCasas;
+      in>>propiedad.rentaCuatroCasas;
+      in>>propiedad.rentaHotel;
+      in>>propiedad.precioCasa;
+      in>>propiedad.precioHotel;
+
+      return in;
+    }
+
     //inicializa libre
     Propiedad();
 
@@ -31,16 +54,16 @@ class Propiedad: public Casillas{
     /*calcular la renta en base  asi el
     jugador tiene todas las propiedades del mismo color
     y cantidad de casas y hoteles*/
-    double calcularRenta(double);
+    double calcularRenta(bool);
     //marca la propiedad como que tiene dueño
     void vender();
-    double getPrecio();
+    double getPrecio();//T6 maso
 
-    bool libre();
+    bool estaLibre();//T6 maso
 
-    int getCasas();
+    int getCasas();//T6 maso
 
-    string getColor();
+    string getColor();//T6maso
 
     //implementaciones inline
     bool agregarCasa(){
@@ -53,7 +76,7 @@ class Propiedad: public Casillas{
     }
     bool agregarHotel(){
       if (casas=4){
-        hotel=1;
+        hoteles=1;
         casas=0;
         return true;
       }else{
